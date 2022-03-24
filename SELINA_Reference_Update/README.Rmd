@@ -2,7 +2,7 @@
 title: "Reference update pipeline"
 author: "Xiaoying Shi"
 date: ""
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}
