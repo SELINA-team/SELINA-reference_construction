@@ -2,8 +2,6 @@ Reference update pipeline
 ================
 Xiaoying Shi
 
-#### Download and preprocess the raw data
-
 1.  Download datasets from databases. Using python parsal for GEO, and
     manully download for other databases such as EBI, HCA, and Broad.
 2.  Formatted raw data to **plain/mtx/h5** and check meta information
@@ -41,8 +39,8 @@ Xiaoying Shi
 Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8 
 ```
 
-5.  Annotate single cell data based on markers collected. 5.1 File
-    preparation: Marker file  
+5.  Annotate single cell data based on markers collected.  
+    5.1 File preparation: Marker file  
 
 <!-- end list -->
 
@@ -53,7 +51,8 @@ Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8
 | c1       | g1,g2,g3…   |
 | c2       | …           |
 
-5.2 Generate signature list 5.3 Annotate with function 5.4 Use
-featureplot to check marker expression and curation. If some cluster’s
-annotation are weird, replace it with the right one. 5.5 Unify into
-different level
+5.2 Generate signature list  
+5.3 Annotate with function  
+5.4 Use featureplot to check marker expression and curation. If some
+cluster’s annotation are weird, replace it with the right one.  
+5.5 Unify into different level
