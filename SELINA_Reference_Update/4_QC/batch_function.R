@@ -90,7 +90,7 @@ batch_main <- function(file_path) {
     MaxEntropy <- log2(Nbatch)
     if (Nbatch >= 2) {
       Entropy <- CalEntropy(Seurat, BatchName, Sname)
-      if (MaxEntropy / median(Entropy) >= 3 | median(Entropy) < 0.8) {
+      if (MaxEntropy / median(Entropy) >= 4) {
         flag <- "Yes"
         batch_correct(file_path)
       } else {
