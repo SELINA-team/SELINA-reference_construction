@@ -2,7 +2,7 @@ Reference update pipeline
 ================
 ### Workflow
 
-![Image text]('/docs/workflow.png')
+![Image text]('docs/workflow.png')
 
 ### Download data
 
