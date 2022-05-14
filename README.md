@@ -13,11 +13,11 @@ Reference update pipeline
 
 <!-- end list -->
 
-  - Split into normal or tumor dataset.  
-  - Collect meta information(Sample, Patient, Platform, CellType (if has
+  - 2.1 Split into normal or tumor dataset.  
+  - 2.2 Collect meta information(Sample, Patient, Platform, CellType (if has
     original annotation or curated.assign with corresponding markers
     mentioned in paper)  
-  - Some common formatting examples that may be helpful to you are
+  - 2.3 Some common formatting examples that may be helpful to you are
     listed in `2_Format_Data/tips.txt`.
 
 ### Generate rds file
@@ -29,7 +29,7 @@ Reference update pipeline
 ### Quality Control
 
 4.  Quality Control  
-    4.1 File preparation: meta file  
+- 4.1 File preparation: meta file  
 
 <!-- end list -->
 
@@ -40,7 +40,7 @@ Reference update pipeline
 | r1        | b1        |
 | r2        | b2        |
 
-4.2 Check and remove batch effect.
+- 4.2 Check and remove batch effect.
 
 ``` bash
 Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8 
@@ -49,7 +49,7 @@ Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8
 ### Annotation
 
 5.  Annotate single cell data based on markers collected.  
-    5.1 File preparation: Marker file  
+- 5.1 File preparation: Marker file  
 
 <!-- end list -->
 
@@ -59,8 +59,8 @@ Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8
 | -------- | ----------- |
 | c1       | g1,g2,g3…   |
 | c2       | …           |
-
-&emsp;&emsp; 5.2 Generate signature list  
-&emsp;&emsp; 5.3 Annotate with function  
-&emsp;&emsp; 5.4 Use featureplot to check marker expression and curation. If some cluster’s annotation are weird, replace it with the right one.  
-&emsp;&emsp; 5.5 Unify into different level
+  
+- 5.2 Generate signature list  
+- 5.3 Annotate with function  
+- 5.4 Use featureplot to check marker expression and curation. If some cluster’s annotation are weird, replace it with the right one.  
+- 5.5 Unify into different level
