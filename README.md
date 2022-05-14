@@ -2,7 +2,7 @@ Reference update pipeline
 ================
 ### Workflow
 
-![Image text]('docs/workflow.png')
+![Image text]('https://github.com/SELINA-team/SELINA-reference_construction/blob/master/docs/workflow.png')
 
 ### Download data
 
