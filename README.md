@@ -1,9 +1,13 @@
 Reference update pipeline
 ================
-Xiaoying Shi
 
-1.  Download datasets from databases. Using python parsal for GEO, and
+### Download data
+
+1.  Download datasets from databases. Using python crawler for GEO, and
     manully download for other databases such as EBI, HCA, and Broad.
+
+### Format data
+
 2.  Formatted raw data to **plain/mtx/h5** and check meta information
     from crawler manually.  
 
@@ -14,13 +18,16 @@ Xiaoying Shi
     original annotation or curated.assign with corresponding markers
     mentioned in paper)  
   - Some common formatting examples that may be helpful to you are
-    listed in `2_Format_Data/tips.txt`.  
+    listed in `2_Format_Data/tips.txt`.
 
-<!-- end list -->
+### Generate rds file
 
 3.  Run MAESTRO (Please check and fill in ‘Tissue’ and ‘Stage’ columns
     in excel-table)  
     **code: **`3_RUN_MAESTRO/MAESTRO_Pipeline.sh`
+
+### Quality Control
+
 4.  Quality Control  
     4.1 File preparation: meta file  
 
@@ -39,6 +46,8 @@ Xiaoying Shi
 Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8 
 ```
 
+### Annotation
+
 5.  Annotate single cell data based on markers collected.  
     5.1 File preparation: Marker file  
 
@@ -51,8 +60,7 @@ Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8
 | c1       | g1,g2,g3…   |
 | c2       | …           |
 
-5.2 Generate signature list  
-5.3 Annotate with function  
-5.4 Use featureplot to check marker expression and curation. If some
-cluster’s annotation are weird, replace it with the right one.  
-5.5 Unify into different level
+&emsp;&emsp; 5.2 Generate signature list  
+&emsp;&emsp; 5.3 Annotate with function  
+&emsp;&emsp; 5.4 Use featureplot to check marker expression and curation. If some cluster’s annotation are weird, replace it with the right one.  
+&emsp;&emsp; 5.5 Unify into different level

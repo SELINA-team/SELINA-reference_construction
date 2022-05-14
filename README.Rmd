@@ -1,6 +1,5 @@
 ---
 title: "Reference update pipeline"
-author: "Xiaoying Shi"
 date: ""
 output: github_document
 ---
@@ -9,13 +8,21 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-1. Download datasets from databases. Using python parsal for GEO, and manully download for other databases such as EBI, HCA, and Broad.
+
+### Download data  
+1. Download datasets from databases. Using python crawler for GEO, and manully download for other databases such as EBI, HCA, and Broad.
+
+### Format data  
 2. Formatted raw data to **plain/mtx/h5** and check meta information from crawler manually.   
 * Split into normal or tumor dataset.  
 * Collect meta information(Sample, Patient, Platform, CellType (if has original annotation or curated.assign with corresponding markers mentioned in paper)  
-* Some common formatting examples that may be helpful to you are listed in `2_Format_Data/tips.txt`.  
+* Some common formatting examples that may be helpful to you are listed in `2_Format_Data/tips.txt`.
+
+### Generate rds file  
 3. Run MAESTRO (Please check and fill in 'Tissue' and 'Stage' columns in excel-table)  
 **code: **`3_RUN_MAESTRO/MAESTRO_Pipeline.sh`
+
+### Quality Control  
 4. Quality Control  
 4.1 File preparation: meta file  
   + Format  
@@ -30,9 +37,10 @@ r2            | b2
 Rscript 4_QC/qc.R -i meta_file_path -o output_path -t 8 
 ```
 
+### Annotation  
 5. Annotate single cell data based on markers collected.  
 5.1 File preparation: Marker file      
-  + Format  
+  + Format    
 
 Celltype      | Marker.gene
 ------------- | -------------
